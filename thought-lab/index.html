@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thought Lab · Mukundram</title>
+  <meta name="description" content="Notes, essays, and things I'm figuring out." />
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✍️</text></svg>" />
+
+  <!-- Anti-flash theme (key must match STORAGE_KEY in config/themes.config.js) -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("site-theme");
+        if (t) document.documentElement.setAttribute("data-theme", t);
+      } catch (e) { }
+    })();
+  </script>
+
+  <link rel="stylesheet" href="../assets/css/themes.css" />
+  <link rel="stylesheet" href="../assets/css/base.css" />
+</head>
+
+<body>
+  <header id="site-header"></header>
+
+  <main class="container">
+    <section id="thought-lab-head" style="padding-block: 2.5rem 0.5rem;"><!-- rendered by thought-lab.js --></section>
+    <ul id="post-list" class="post-list">
+      <li class="state">Loading posts…</li>
+    </ul>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script type="module" src="thought-lab.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+/* Solarized (light) theme — Ethan Schoonover's palette. */
+[data-theme="solarized"] {
+  --bg:            #fdf6e3;
+  --surface:       #f5eecf;
+  --surface-2:     #eee8d5;
+  --text:          #073642;
+  --text-muted:    #657b83;
+  --border:        #e3dcc4;
+  --accent:        #268bd2;
+  --accent-hover:  #1e6fa8;
+  --accent-contrast: #fdf6e3;
+  --code-bg:       #eee8d5;
+  --shadow:        0 1px 3px rgba(101, 123, 131, 0.15), 0 8px 24px rgba(101, 123, 131, 0.12);
+  color-scheme: light;
+}

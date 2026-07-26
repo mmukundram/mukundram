@@ -1,0 +1,15 @@
+/* ===========================================================================
+ * Theme aggregator
+ * ---------------------------------------------------------------------------
+ * Themes are kept one-per-file for modularity. This file just imports them.
+ * Adding a theme = create themes/<id>.css, add an @import here, and register
+ * it in config/themes.config.js.
+ *
+ * The active theme is selected by the `data-theme` attribute on <html>,
+ * which is set by assets/js/theme-switcher.js.
+ * =========================================================================== */
+
+@import "themes/light.css";
+@import "themes/dark.css";
+@import "themes/solarized.css";
+@import "themes/terminal.css";

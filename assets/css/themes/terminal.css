@@ -1,0 +1,15 @@
+/* Terminal theme — green phosphor on black, for fun. */
+[data-theme="terminal"] {
+  --bg:            #05080a;
+  --surface:       #0a1014;
+  --surface-2:     #0f171c;
+  --text:          #33ff99;
+  --text-muted:    #1f9e63;
+  --border:        #123322;
+  --accent:        #7dffb0;
+  --accent-hover:  #aeffcf;
+  --accent-contrast: #05080a;
+  --code-bg:       #0a1014;
+  --shadow:        0 0 0 1px rgba(51, 255, 153, 0.08), 0 8px 24px rgba(0, 0, 0, 0.6);
+  color-scheme: dark;
+}
