@@ -30,19 +30,35 @@ Key features:
 │   │   └── themes/           # one file per theme (light, dark, …)
 │   └── js/
 │       ├── theme-switcher.js # applies + persists theme, builds the picker
-│       ├── components.js     # shared header/footer chrome
+│       ├── components.js     # shared chrome + card-grid renderer
 │       ├── hub.js            # renders the home page from config
 │       └── vendor/
 │           └── marked.esm.js # markdown parser (MIT), vendored — no CDN needed
-└── thought-lab/              # ── first mini-site (the blog) ──
-    ├── index.html            # post list
-    ├── post.html             # single-post reader (?slug=…)
-    ├── thought-lab.config.js
-    ├── thought-lab.js / post.js
-    └── posts/
-        ├── posts.json        # manifest of posts
-        └── *.md              # posts, written in Markdown
+├── thought-lab/             # ── mini-site: the blog ──
+│   ├── index.html            # post list
+│   ├── post.html             # single-post reader (?slug=…)
+│   ├── thought-lab.config.js
+│   ├── thought-lab.js / post.js
+│   └── posts/
+│       ├── posts.json        # manifest of posts
+│       └── *.md              # posts, written in Markdown
+└── workshop/                # ── mini-site: project gallery ──
+    ├── index.html
+    ├── workshop.config.js    # list of projects (local folders or other repos)
+    └── workshop.js
 ```
+
+### Projects that live in their own repo
+
+A project can be a sub-folder here, or its **own repository with its own GitHub
+Pages site** — the Workshop just links to it. That's the recommended path for
+anything large (e.g. a games arcade full of assets): a separate repo gets a fresh
+**~1 GB Pages quota**, so big projects don't count against this site's limit.
+Because every one of these sites is served from the same `mmukundram.github.io`
+domain, the theme choice (stored in `localStorage`) even carries across them.
+
+Example: **Carnival** (a games arcade) lives in its own `carnival` repo and is
+listed in `workshop/workshop.config.js` as a full-URL link.
 
 ## How it works
 

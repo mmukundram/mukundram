@@ -3,7 +3,7 @@
 // =============================================================================
 
 import { siteConfig } from "../../config/site.config.js";
-import { mountChrome, el } from "./components.js";
+import { mountChrome, renderCardGrid, el } from "./components.js";
 
 mountChrome({ homeHref: "./" });
 
@@ -18,29 +18,4 @@ if (hero) {
 }
 
 // Mini-site cards
-const grid = document.getElementById("minisites");
-if (grid) {
-  for (const site of siteConfig.minisites) {
-    const isLive = site.status === "live";
-    const card = el(isLive ? "a" : "div", `card${isLive ? "" : " card--soon"}`);
-    if (isLive) card.href = site.href;
-
-    const icon = el("div", "card__icon");
-    icon.textContent = site.icon || "•";
-
-    const title = el("h2", "card__title");
-    title.textContent = site.title;
-
-    const desc = el("p", "card__desc");
-    desc.textContent = site.description;
-
-    card.append(icon, title, desc);
-
-    if (!isLive) {
-      const badge = el("span", "card__badge");
-      badge.textContent = "Coming soon";
-      card.appendChild(badge);
-    }
-    grid.appendChild(card);
-  }
-}
+renderCardGrid(document.getElementById("minisites"), siteConfig.minisites);

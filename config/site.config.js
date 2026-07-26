@@ -36,7 +36,7 @@ export const siteConfig = {
       description: "A gallery of things I've built.",
       href: "workshop/",
       icon: "🛠️",
-      status: "soon",
+      status: "live",
     },
     {
       id: "content-cache",

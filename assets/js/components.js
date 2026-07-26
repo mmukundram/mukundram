@@ -75,6 +75,51 @@ function mountFooter() {
   host.appendChild(inner);
 }
 
+/**
+ * Render a grid of cards into `gridEl` from a list of items. Shared by the hub
+ * (mini-sites) and the Workshop (projects) so both look and behave identically.
+ *
+ * Each item: { title, description, icon?, href?, status?, badge?, newTab? }
+ *   - status "live"  -> clickable <a> card (needs href)
+ *   - status "soon"  -> non-clickable card with a "Coming soon" badge
+ *   - newTab: true   -> open href in a new tab (use for links to other repos)
+ *   - badge          -> optional custom badge text on a live card
+ */
+export function renderCardGrid(gridEl, items) {
+  if (!gridEl) return;
+  for (const item of items) {
+    const isLive = item.status === "live";
+    const card = el(isLive ? "a" : "div", `card${isLive ? "" : " card--soon"}`);
+    if (isLive) {
+      card.href = item.href;
+      if (item.newTab) {
+        card.target = "_blank";
+        card.rel = "noopener";
+      }
+    }
+
+    const icon = el("div", "card__icon");
+    icon.textContent = item.icon || "•";
+
+    const title = el("h2", "card__title");
+    title.textContent = item.title;
+
+    const desc = el("p", "card__desc");
+    desc.textContent = item.description;
+
+    card.append(icon, title, desc);
+
+    const badgeText = isLive ? item.badge : item.badge || "Coming soon";
+    if (badgeText) {
+      const badge = el("span", "card__badge");
+      badge.textContent = badgeText;
+      card.appendChild(badge);
+    }
+
+    gridEl.appendChild(card);
+  }
+}
+
 // Small DOM helper.
 export function el(tag, className) {
   const node = document.createElement(tag);
